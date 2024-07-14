@@ -48,21 +48,20 @@ export default function EnableColorOnDarkAppBar() {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Divider 
+            <Divider 
               orientation="vertical" 
               flexItem 
               sx={{ 
-                height: { xs: "90px", sm: "150px", md: "150px", lg: "150px" }, 
-                marginTop:2,
-                marginRight: 1, 
+                height: { xs: "80px", sm: "80px", md: "120px", lg: "150px" }, 
+                marginRight: 2, 
                 backgroundColor: "white" 
               }} 
             />
             <Box sx={{ textAlign: "left" }}>
               <Typography
-                variant="h1"
+                variant="h4"
                 noWrap
-                component="h1"
+                component="div"
                 sx={{ fontSize: { xs: "1.5em", sm: "3em" } }}
               >
                 Leonardo
@@ -72,15 +71,13 @@ export default function EnableColorOnDarkAppBar() {
               <Typography
                 variant="h6"
                 component="h2"
-                
-    
                 sx={{ fontSize: { xs: "1em", sm: "1.25em" } }}
               >
                 Front-end Developer
               </Typography>
             </Box>
           </Box>
-          <Box>
+          <Box sx={{ display: 'flex', alignItems: 'flex-start', padding: 1, marginTop:15 }}>
             <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3 }}>
               {socialLinks.map((link, index) => (
                 <Tooltip key={index} title={link.title} arrow>
