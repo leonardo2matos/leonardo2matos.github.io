@@ -8,8 +8,7 @@ import BoxComponents from '@/components/BoxComponents'
 export default function Home() {
   return (
     <MainLayout>
-    <CardsComponents/>
-    <BoxComponents/>
+   
       
     </MainLayout>
   );

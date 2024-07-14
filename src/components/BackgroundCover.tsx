@@ -5,7 +5,7 @@ export default function BackgroundCover() {
   return (
     <Box
       sx={{
-        width: '100%',
+        width: '100vw',
         height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' },
         position: 'absolute',
         overflow: 'hidden',

@@ -9,6 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 import { MdEmail } from "react-icons/md";
 import Divider from "@mui/material/Divider";
 import { FaWhatsapp, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { Container } from "@mui/material";
 
 const socialLinks = [
   { icon: <MdEmail />, title: "Email", href: "mailto:youremail@example.com" },
@@ -36,38 +37,50 @@ const socialLinks = [
 
 export default function EnableColorOnDarkAppBar() {
   return (
-    <Stack sx={{ flexGrow: 0 }}>
-      <AppBar position="static" color="primary">
+    <AppBar position="static" color="primary">
+      <Container maxWidth="lg">
         <Toolbar
           sx={{
-            flexDirection: { xs: "column", sm: "row" },
-            alignItems: { xs: "flex-start", sm: "flex-end" },
-            justifyContent: "space-between",
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
             padding: { xs: 1, sm: 2 },
           }}
         >
-          <Box sx={{ flexGrow: 1, padding: 2}}>
-            <Typography
-              variant="h4"
-              noWrap
-              component="div" 
-              marginLeft={1}             
-              sx={{ fontSize: { xs: "1.5em", sm: "3em" } }}
-            >
-              Leonardo
-              <br/>
-              Matos
-            </Typography>
-            <Typography
-              variant="h6"
-              component="h2"
-              marginLeft={1}
-              sx={{ fontSize: { xs: "1em", sm: "1.25em" } }}
-            >
-              Front-end Developer
-            </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Divider 
+              orientation="vertical" 
+              flexItem 
+              sx={{ 
+                height: { xs: "90px", sm: "150px", md: "150px", lg: "150px" }, 
+                marginTop:2,
+                marginRight: 1, 
+                backgroundColor: "white" 
+              }} 
+            />
+            <Box sx={{ textAlign: "left" }}>
+              <Typography
+                variant="h1"
+                noWrap
+                component="h1"
+                sx={{ fontSize: { xs: "1.5em", sm: "3em" } }}
+              >
+                Leonardo
+                <br />
+                Matos
+              </Typography>
+              <Typography
+                variant="h6"
+                component="h2"
+                
+    
+                sx={{ fontSize: { xs: "1em", sm: "1.25em" } }}
+              >
+                Front-end Developer
+              </Typography>
+            </Box>
           </Box>
-          <Box sx={{ flexGrow: 0, padding: 3 }}>
+          <Box>
             <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3 }}>
               {socialLinks.map((link, index) => (
                 <Tooltip key={index} title={link.title} arrow>
@@ -87,7 +100,7 @@ export default function EnableColorOnDarkAppBar() {
             </Stack>
           </Box>
         </Toolbar>
-      </AppBar>
-    </Stack>
+      </Container>
+    </AppBar>
   );
 }
