@@ -37,24 +37,26 @@ const socialLinks = [
 
 export default function EnableColorOnDarkAppBar() {
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="fixed" color="primary">
       <Container maxWidth="lg">
         <Toolbar
           sx={{
             display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
+            alignContent:'flex-end',
             padding: { xs: 1, sm: 2 },
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex' }}>
             <Divider 
               orientation="vertical" 
               flexItem 
               sx={{ 
-                height: { xs: "80px", sm: "80px", md: "120px", lg: "150px" }, 
-                marginRight: 2, 
-                backgroundColor: "white" 
+              height: { xs: "80px", sm: "150px", md: "120px", lg: "150px" }, 
+              marginRight: 2, 
+              backgroundColor: "white" 
               }} 
             />
             <Box sx={{ textAlign: "left" }}>
@@ -71,13 +73,14 @@ export default function EnableColorOnDarkAppBar() {
               <Typography
                 variant="h6"
                 component="h2"
+                noWrap
                 sx={{ fontSize: { xs: "1em", sm: "1.25em" } }}
               >
                 Front-end Developer
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'flex-start', padding: 1, marginTop:15 }}>
+          <Box sx={{ display: 'flex', alignItems: 'flex-end', padding: 1,}}>
             <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3 }}>
               {socialLinks.map((link, index) => (
                 <Tooltip key={index} title={link.title} arrow>
