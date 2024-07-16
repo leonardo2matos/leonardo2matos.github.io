@@ -11,7 +11,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function MultiActionAreaCard() {
   return (
-    <Card sx={{ maxWidth: 300 }}>
+    <Card sx={{ maxWidth: 300, m:2 }}>
       <CardActionArea>
         <CardMedia
           component="img"
