@@ -31,46 +31,31 @@ const CardComponentsStacks: React.FC = () => {
       height: { xs: 'auto', md: '400px', lg: '500px' },
       mt: { xs: 4, md: 0 },
       flexWrap: 'wrap',
-      '& svg': {
-        fontSize: { xs: '3em', sm: '4em', md: '5em', lg: '6em' },
-        transition: 'transform 0.3s, font-size 0.3s',
-      },
-      '& svg:hover': {
-        transform: 'scale(1.2)', // Aumenta o tamanho do ícone em 20% ao passar o mouse
-      },
-      '& .js': { color: 'gold' },
-      '& .react': { color: 'cyan' },
-      '& .typescript': { color: 'blue' },
-      '& .css': { color: 'lightblue' },
-      '& .html': { color: 'orange' },
-      '& .nextjs': { color: 'black' },
-      '& .nextui': { color: 'black' },
-      '& .mui': { color: 'blue' },
-      '& .node': { color: 'green' },
-      '& .mongo': { color: 'green' },
-      '& .npm': { color: 'red' },
-      '& .yarn': { color: 'cyan' },
     }}>
-        <Typography
-        variant="h2"
-        sx={{
-          fontSize: { xs: '1.5em', sm: '2em', md: '3em', lg: '4em' },
-          textAlign: 'center',
-          width: '100%',
-          mb: { xs: 2, md: 0 }, // Ajusta o espaçamento abaixo do título em telas menores
-        }}
-      >
-        Stacks
-      </Typography>
       <Box sx={{
         position: 'relative',
         width: '100%',
         height: '100%',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: { xs: 'flex-start', md: 'center' },
         alignItems: 'center',
         flexWrap: 'wrap',
       }}>
+        <Typography
+          variant="h2"
+          sx={{
+            position: { xs: 'static', md: 'absolute' },
+            top: { md: '50%' },
+            left: { md: '50%' },
+            transform: { md: 'translate(-50%, -50%)' },
+            fontSize: { xs: '1.5em', sm: '2em', md: '3em', lg: '4em' },
+            zIndex: 1,
+            textAlign: 'center',
+            mb: { xs: 2, md: 0 },
+          }}
+        >
+          Stacks
+        </Typography>
         {icons.map((icon, index) => {
           const IconComponent = icon.Component;
           const angle = (index / icons.length) * 360;
@@ -95,7 +80,7 @@ const CardComponentsStacks: React.FC = () => {
                     transform: { xs: 'none', sm: 'none', md: `translate(${x}px, ${y}px) scale(1.2)` }
                   },
                   '& svg': {
-                    fontSize: { xs: '3em', sm: '4em', md: '5em', lg: '6em' },
+                    fontSize: { xs: '2em', sm: '3em', md: '4em', lg: '5em' },
                   },
                   [`& .${icon.className}`]: { color: 'inherit' },
                 }}
