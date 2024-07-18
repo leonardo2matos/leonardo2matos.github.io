@@ -7,8 +7,6 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 
-
-
 export default function MultiActionAreaCard() {
   return (
     <Card sx={{ maxWidth: 300, m:2 }}>
@@ -23,15 +21,13 @@ export default function MultiActionAreaCard() {
           <Typography gutterBottom variant="h5" component="div">
             Hi, everyone!
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          <Typography variant="body1" color="text.secondary">
+          
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="success">
           CV_Download <ArrowDownwardIcon/>
         </Button>
       </CardActions>

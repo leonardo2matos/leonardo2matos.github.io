@@ -80,7 +80,7 @@ export default function EnableColorOnDarkAppBar() {
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'flex-end', padding: 1,}}>
+          <Box sx={{ display: 'flex', alignItems: 'flex-end', padding: 1}}>
             <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3 }}>
               {socialLinks.map((link, index) => (
                 <Tooltip key={index} title={link.title} arrow>
@@ -88,6 +88,7 @@ export default function EnableColorOnDarkAppBar() {
                     href={link.href}
                     target="_blank"
                     sx={{
+                      
                       color: "inherit",
                       fontSize: { xs: "1.5em", sm: "2em", md: "2em" },
                       "&:hover": { color: "primary.light" },

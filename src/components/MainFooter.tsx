@@ -13,7 +13,7 @@ export default function Footer() {
         flexFlow: 0
       }}
     >
-      <Typography variant="body2" color="inherit">
+      <Typography variant="body1" color="inherit">
         {'Copyright © '}
         <Link color="inherit" href="https://yourwebsite.com/">
           Your Website
