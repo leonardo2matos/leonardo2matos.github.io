@@ -217,3 +217,139 @@ const CardComponentsStacks: React.FC = () => {
 };
 
 export default CardComponentsStacks;
+
+
+// 19.07
+
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { Container, Typography } from "@mui/material";
+import CardComponents from "@/components/CardComponents";
+import { Bolt } from "@mui/icons-material";
+//import CardComponentsStacks from '@/components/CardComponentsStacks';
+
+export default function BasicGrid() {
+  return (
+    <Container
+      maxWidth="lg"
+      sx={{
+        mt: { xs: 20, sm: 15, md: 25, lg: 15, xl: 5 }, // Adiciona margem superior para evitar sobreposição com a navbar
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Box sx={{ width: "100%" }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
+            <CardComponents />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12} lg={5} >
+            <Typography 
+            sx={{
+               textAlign:'justify-center',
+               fontWeight: 700,
+               fontSize: 
+              { 
+               xs: "3.5em",
+               sm: "4em",
+               md:"5em",
+               lg:"6em" 
+               }, 
+               
+            }}
+               variant="body1" component="div" >
+
+               Hi,everyone!
+
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            {/* Adicione mais conteúdo aqui se necessário */}
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
+  );
+}
+
+// sugestão chatGPt deagrade 
+
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { Container, Typography } from "@mui/material";
+import CardComponents from "@/components/CardComponents";
+import { Bolt } from "@mui/icons-material";
+//import CardComponentsStacks from '@/components/CardComponentsStacks';
+
+const BasicGrid: React.FC = () => {
+  return (
+    <Container
+      maxWidth="lg"
+      sx={{
+        mt: { xs: 20, sm: 15, md: 25, lg: 15, xl: 5 }, // Adiciona margem superior para evitar sobreposição com a navbar
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: 'linear-gradient(135deg, rgba(0,0,255,0.5), rgba(255,0,0,0.5))', // Degradê entre azul e vermelho
+        filter: 'blur(8px)', // Adiciona efeito de desfoque
+        '&:hover': {
+          filter: 'blur(0)', // Remove o desfoque ao passar o mouse
+          transition: 'filter 0.5s',
+        },
+        color: 'white', // Cor do texto
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          background: 'inherit', // Herdar o fundo do Container
+          filter: 'none', // Remover o desfoque do Box
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
+            <CardComponents />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12} lg={5}>
+            <Typography
+              sx={{
+                textAlign: 'center', // Ajustado para centralizar corretamente
+                fontWeight: 700,
+                fontSize: {
+                  xs: "3.5em",
+                  sm: "4em",
+                  md: "5em",
+                  lg: "6em"
+                },
+                letterSpacing: '-0.1em', // Espaçamento entre as letras
+                background: 'linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))',
+                WebkitBackgroundClip: 'text', // Adiciona o degradê ao texto
+                WebkitTextFillColor: 'transparent', // Faz o texto ser preenchido pelo degradê
+                filter: 'blur(0.8px)', // Efeito de desfoque leve no texto
+                '&:hover': {
+                  filter: 'blur(0)', // Remove o desfoque ao passar o mouse
+                  transition: 'filter 0.5s',
+                }
+              }}
+              variant="body1"
+              component="div"
+            >
+              Hi, everyone!
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            {/* Adicione mais conteúdo aqui se necessário */}
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
+  );
+};
+
+export default BasicGrid;
+
