@@ -1,71 +1,82 @@
-import React, { useState } from 'react';
-import { Button, CircularProgress, Box } from '@mui/material';
-import DownloadIcon from '@mui/icons-material/Download';
+import React, { useState } from "react";
+import { Button, CircularProgress, Box, styled } from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
+
+const NeonButton = styled(Button)(({ theme, isloading }) => ({
+  fontSize: "0.8rem", // Ajuste o tamanho da fonte conforme necessário
+  fontWeight: 700,
+  letterSpacing: "0.05em",
+  padding: isloading === "true" ? "0" : "0.5em 1em",
+  color: "#fff",
+  transition: "all 0.3s ease",
+  background: "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
+  borderRadius: isloading === "true" ? "50%" : "10px", // Define o botão como circular quando em estado de carregamento
+  width: isloading === "true" ? "64px" : "auto", // Ajuste o tamanho conforme necessário
+  height: isloading === "true" ? "64px" : "auto", // Ajuste o tamanho conforme necessário
+  minWidth: "0", // Remove a largura mínima padrão do botão
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  filter: "blur(0.5px)",
+  boxShadow: "0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #0ff",
+  animation: "neon 1.5s ease-in-out infinite alternate",
+  "&:hover": {
+    background: "linear-gradient(135deg, rgba(0,0,255,0.8), rgba(255,0,0,0.8))",
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    boxShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
+    transform: "scale(1.00)",
+  },
+  "@keyframes neon": {
+    from: {
+      boxShadow: "0 0 5px #00f, 0 0 3px #00f, 0 0 3px #00f, 0 0 3px #00f",
+    },
+    to: {
+      boxShadow:
+        "0 0 10px #0ff, 0 0 10px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 15px #0ff",
+    },
+  },
+}));
 
 const ButtonDownload: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [isDownloading, setDownloading] = useState(false);
 
-  const handleDownload = () => {
-    setLoading(true);
+  const handleDownloadClick = () => {
+    setDownloading(true);
 
-    // Simulação de atraso para o download (2 segundos)
     setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = '/path/to/your/file.txt'; // Substitua pelo caminho do seu arquivo
-      link.download = 'file.txt'; // Nome do arquivo a ser baixado
+      const link = document.createElement("a");
+      link.href = "/path/to/your/file.txt";
+      link.download = "file.txt";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      setLoading(false);
+      setDownloading(false);
     }, 2000);
   };
 
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Button
+    <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+      <NeonButton
         variant="contained"
-        color="primary"
-        onClick={handleDownload}
-        disabled={loading}
-        sx={{
-          fontSize: '1rem',
-          fontWeight: 700,
-          letterSpacing: '0.1em',
-          background: 'linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))',
-          color: 'white',
-          borderRadius: '50%', // Define o botão como circular
-          width: '64px', // Ajuste o tamanho conforme necessário
-          height: '64px', // Ajuste o tamanho conforme necessário
-          minWidth: '0', // Remove a largura mínima padrão do botão
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          filter: 'blur(0.5px)',
-          '&:hover': {
-            background: 'linear-gradient(135deg, rgba(0,0,255,0.8), rgba(255,0,0,0.8))',
-            filter: 'blur(0)',
-            transition: 'filter 0.3s',
-          },
-        }}
+        onClick={handleDownloadClick}
+        disabled={isDownloading}
       >
-        {!loading && <DownloadIcon />}
-        {loading && (
+        {!isDownloading && (
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <DownloadIcon sx={{ marginRight: "0.5em" }} />
+            Download CV
+          </Box>
+        )}
+        {isDownloading && (
           <CircularProgress
-            size={45} // Ajuste o tamanho do indicador de progresso conforme necessário
+            size={24}
             sx={{
-              color: 'white',
-              position: 'absolute',
+              color: "white",
+              position: "absolute",
             }}
           />
         )}
-      </Button>
+      </NeonButton>
     </Box>
   );
 };

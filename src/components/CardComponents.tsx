@@ -9,23 +9,32 @@ import ButtonDownload from './ButtonDownload'
 
 export default function MultiActionAreaCard() {
   return (
-    <Card sx={{ maxWidth:300}}>
+    <Card sx={{ maxWidth:400}} >        
       <CardActionArea>
         <CardMedia
           component="img"
-          height="300"
+          height="400"
           image="/images/leonardo-profile.jpeg"
           alt="leonardo-matos-photo-profile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-          </Typography>
+         
           <Typography variant="body1" color="text.secondary">
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      <ButtonDownload/>
+      <CardActions
+        sx={{
+          display: 'flex',
+          justifyContent: 'right',
+          mb: 2,
+          mr: 1,
+        }}
+      >
+      
+      <ButtonDownload
+       
+      />
       </CardActions>
     </Card>
   );
