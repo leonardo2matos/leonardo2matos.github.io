@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-import { Button, CircularProgress, Box, styled } from "@mui/material";
+import { Button, CircularProgress, Box, styled, ButtonProps } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 
-const NeonButton = styled(Button)(({ theme, isloading }) => ({
+interface CustomButtonProps extends ButtonProps {
+  isloading?: boolean;
+}
+
+
+
+const NeonButton = styled(Button)<CustomButtonProps>(({ theme, isloading }) => ({
+
+
   fontSize: "0.8rem", // Ajuste o tamanho da fonte conforme necessário
   fontWeight: 700,
   letterSpacing: "0.05em",
-  padding: isloading === "true" ? "0" : "0.5em 1em",
+  padding: isloading !== undefined && isloading === true ? "0" : "0.5em 1em",
   color: "#fff",
   transition: "all 0.3s ease",
   background: "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
-  borderRadius: isloading === "true" ? "50%" : "10px", // Define o botão como circular quando em estado de carregamento
-  width: isloading === "true" ? "64px" : "auto", // Ajuste o tamanho conforme necessário
-  height: isloading === "true" ? "64px" : "auto", // Ajuste o tamanho conforme necessário
+  borderRadius: isloading === true ? "50%" : "10px", // Define o botão como circular quando em estado de carregamento
+  width: isloading === true ? "64px" : "auto", // Ajuste o tamanho conforme necessário
+  height: isloading === true ? "64px" : "auto", // Ajuste o tamanho conforme necessário
   minWidth: "0", // Remove a largura mínima padrão do botão
   display: "flex",
   alignItems: "center",
