@@ -17,18 +17,14 @@ export default function MultiActionAreaCard() {
           image="/images/leonardo-profile.jpeg"
           alt="leonardo-matos-photo-profile"
         />
-        <CardContent>
-         
-          <Typography variant="body1" color="text.secondary">
-          </Typography>
-        </CardContent>
+
       </CardActionArea>
       <CardActions
         sx={{
           display: 'flex',
-          justifyContent: 'right',
-          mb: 2,
-          mr: 1,
+          justifyContent: 'center',
+          mb: 3,
+          mt: 3,
         }}
       >
       

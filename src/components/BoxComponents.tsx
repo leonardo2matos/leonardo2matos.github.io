@@ -4,14 +4,15 @@ import Grid from "@mui/material/Grid";
 import { Container, Typography } from "@mui/material";
 import CardComponents from "@/components/CardComponents";
 import CardComponentsStacks from "./CardComponentsStacks";
+import CardComponentsEduc from "./CardComponentsEduc";
 
-// make it responsive
+
 const BasicGrid: React.FC = () => {
   return (
     <Container
       maxWidth="lg"
       sx={{
-        mt: { xs: 15, sm: 30, md: 30, lg: 50, xl: 50 }, // Adiciona margem superior para evitar sobreposição com a navbar
+        mt: { xs: 15, sm: 25, md: 30, lg: 30, xl: 35 }, // Adiciona margem superior para evitar sobreposição com a navbar
         minHeight: "95vh",
         alignItems: "center",
         alignContent: "stretch",
@@ -20,30 +21,30 @@ const BasicGrid: React.FC = () => {
       }}
     >
       <Box sx={{ width: "100%" }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           <Grid
             item
             xs={12}
-            sm={6}
-            md={6}
+            sm={12}
+            md={12}
             lg={6}
-            sx={{ display: "flex", justifyContent: "center" }}
+            sx={{ }}
           >
             <CardComponents />
           </Grid>
           <Grid
             item
             xs={12}
-            sm={6}
+            sm={12}
             md={6}
             lg={6}
             sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Box sx={{ textAlign: "center" }}>
+            <Box sx={{ textAlign: "left" }}>
               <Typography
                 sx={{
                   fontWeight: 700,
-                  fontSize: { xs: "2.0em", md: "3.0em", lg: "4.0em" },
+                  fontSize: { xs: "3.5em", md: "4.5em", lg: "4.0em" },
                   letterSpacing: "-0.05em", // Espaçamento entre as letras
                   background:
                     "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
@@ -92,30 +93,30 @@ const BasicGrid: React.FC = () => {
           >
             <Grid
               item
-              xs={4}
+              xs={12}
               sm={4}
-              md={4}
-              lg={4}
+              md={6}
+              lg={6}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <CardComponentsStacks />
             </Grid>
             <Grid
               item
-              xs={4}
+              xs={12}
               sm={4}
-              md={4}
-              lg={4}
+              md={6}
+              lg={6}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              <CardComponentsStacks />
+              <CardComponentsEduc />
             </Grid>
             <Grid
               item
-              xs={4}
+              xs={12}
               sm={4}
-              md={4}
-              lg={4}
+              md={6}
+              lg={6}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <CardComponentsStacks />

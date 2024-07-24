@@ -141,11 +141,11 @@ const CardComponentsStacks: React.FC = () => {
                 width: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
                 height: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
                 borderRadius: "50%",
-                backgroundColor: "transparent",
+                backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "black",
+                color: "white",
                 boxShadow:
                   "0 0 7px 0 #9013fe, 0 0 5px 2px #d64eff, inset 0 0 5px 1px #d64eff",
                 "&:hover": {
@@ -161,11 +161,11 @@ const CardComponentsStacks: React.FC = () => {
                 variant="h2"
                 sx={{
                   textAlign: "center",
-                  fontSize: { xs: "1.5em", sm: "2em", md: "3em", lg: "4em" },
-                  mb: { xs: 2, md: 0 },
+                  fontSize: { xs: "1.0em", sm: "1.5em", md: "2em", lg: "3.5em" },
+                  
                 }}
               >
-                Stacks
+                STACKS
               </Typography>
             </Box>
           </Tooltip>
@@ -194,8 +194,8 @@ const CardComponentsStacks: React.FC = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  width: { xs: "2em", sm: "3em", md: "4em", lg: "5em" },
-                  height: { xs: "2em", sm: "3em", md: "4em", lg: "5em" },
+                  width: { xs: "4em", sm: "5em", md: "6em", lg: "7em" },
+                  height: { xs: "4em", sm: "5em", md: "6em", lg: "7em" },
                   borderRadius: "50%",
                   margin: { xs: "0.3em", sm: "0.5em", md: "0.7em", lg: "1em" },
                   padding: "0.5em",
@@ -204,7 +204,7 @@ const CardComponentsStacks: React.FC = () => {
                     transform: "scale(1.2)",
                   },
                   "& svg": {
-                    fontSize: { xs: "1.5em", sm: "2em", md: "2.5em", lg: "3em" },
+                    fontSize: { xs: "2.5em", sm: "3em", md: "3.5em", lg: "4em" },
                     color: icon.color,
                   },
                 }}
