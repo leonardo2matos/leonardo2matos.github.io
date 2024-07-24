@@ -25,72 +25,84 @@ const icons = [
     className: "html",
     title: "HTML",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    color: "orange",
   },
   {
     Component: FaCss3Alt,
     className: "css",
     title: "CSS",
     link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    color: "lightblue",
   },
   {
     Component: RiJavascriptFill,
     className: "js",
     title: "JavaScript",
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    color: "gold",
   },
   {
     Component: BiLogoTypescript,
     className: "typescript",
     title: "TypeScript",
     link: "https://www.typescriptlang.org/",
+    color: "blue",
   },
   {
     Component: FaReact,
     className: "react",
     title: "React",
     link: "https://reactjs.org/",
+    color: "cyan",
   },
   {
     Component: SiNextdotjs,
     className: "nextjs",
     title: "Next.js",
     link: "https://nextjs.org/",
+    color: "black",
   },
   {
     Component: SiNextui,
     className: "nextui",
     title: "NextUI",
     link: "https://nextui.org/",
+    color: "black",
   },
   {
     Component: SiMui,
     className: "mui",
     title: "MUI",
     link: "https://mui.com/",
+    color: "blue",
   },
   {
     Component: FaNode,
     className: "node",
     title: "Node.js",
     link: "https://nodejs.org/",
+    color: "green",
   },
   {
     Component: BiLogoMongodb,
     className: "mongo",
     title: "MongoDB",
     link: "https://www.mongodb.com/",
+    color: "green",
   },
   {
     Component: FaNpm,
     className: "npm",
     title: "NPM",
     link: "https://www.npmjs.com/",
+    color: "red",
   },
   {
     Component: FaYarn,
     className: "yarn",
     title: "Yarn",
     link: "https://yarnpkg.com/",
+    color: "cyan",
   },
 ];
 
@@ -106,7 +118,7 @@ const CardComponentsStacks: React.FC = () => {
     if (isSm) return 150;
     if (isMd) return 200;
     if (isLg) return 250;
-    return 200; // Default case
+    return 200;
   };
 
   return (
@@ -119,18 +131,6 @@ const CardComponentsStacks: React.FC = () => {
         height: { xs: "auto", md: "500px" },
         mt: { xs: 4, md: 0 },
         textAlign: "center",
-        "& .js": { color: "gold" },
-        "& .react": { color: "cyan" },
-        "& .typescript": { color: "blue" },
-        "& .css": { color: "lightblue" },
-        "& .html": { color: "orange" },
-        "& .nextjs": { color: "black" },
-        "& .nextui": { color: "black" },
-        "& .mui": { color: "blue" },
-        "& .node": { color: "green" },
-        "& .mongo": { color: "green" },
-        "& .npm": { color: "red" },
-        "& .yarn": { color: "cyan" },
       }}
     >
       <Planet
@@ -150,7 +150,7 @@ const CardComponentsStacks: React.FC = () => {
                   "0 0 7px 0 #9013fe, 0 0 5px 2px #d64eff, inset 0 0 5px 1px #d64eff",
                 "&:hover": {
                   transform: "scale(1.1)",
-                  border: "1px solid #f3eaff,",
+                  border: "1px solid #f3eaff",
                   boxShadow:
                     "0 0 7px 0 #9013fe, 0 0 5px 2px #d64eff, inset 0 0 7px 0 #9013fe, inset 0 0 5px 1px #d64eff",
                   cursor: "pointer",
@@ -195,7 +195,7 @@ const CardComponentsStacks: React.FC = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   width: { xs: "2em", sm: "3em", md: "4em", lg: "5em" },
-                  height: { xs: "2em", sm: "5em", md: "5em", lg: "5em" },
+                  height: { xs: "2em", sm: "3em", md: "4em", lg: "5em" },
                   borderRadius: "50%",
                   margin: { xs: "0.3em", sm: "0.5em", md: "0.7em", lg: "1em" },
                   padding: "0.5em",
@@ -204,8 +204,8 @@ const CardComponentsStacks: React.FC = () => {
                     transform: "scale(1.2)",
                   },
                   "& svg": {
-                    fontSize: { xs: "20em", sm: "8em", md: "10em", lg: "8em" },
-                    color: "inherit",
+                    fontSize: { xs: "1.5em", sm: "2em", md: "2.5em", lg: "3em" },
+                    color: icon.color,
                   },
                 }}
                 className={icon.className}

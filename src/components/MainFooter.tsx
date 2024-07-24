@@ -6,11 +6,11 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        p:4,
-        backgroundColor: 'grey', 
+        p: 4,
+        backgroundColor: 'grey',
         color: 'white',
         textAlign: 'center',
-        flexFlow: 0
+        flexFlow: 'row wrap',
       }}
     >
       <Typography variant="body1" color="inherit">

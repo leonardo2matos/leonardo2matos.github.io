@@ -6,11 +6,12 @@ export default function BackgroundCover() {
     <Box
       sx={{
         width: '100vw',
-        height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' },
+        height: '100vh',  //{ xs: '200px', sm: '300px', md: '400px', lg: '500px' },
         position: 'absolute',
         overflow: 'hidden',
         bottom: 0,
         zIndex: -1,
+        
       
 
       }}
