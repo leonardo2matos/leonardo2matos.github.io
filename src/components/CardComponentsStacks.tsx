@@ -115,9 +115,9 @@ const CardComponentsStacks: React.FC = () => {
 
   const getOrbitRadius = () => {
     if (isXs) return 100;
-    if (isSm) return 150;
-    if (isMd) return 200;
-    if (isLg) return 250;
+    if (isSm) return 110;
+    if (isMd) return 120;
+    if (isLg) return 200;
     return 200;
   };
 

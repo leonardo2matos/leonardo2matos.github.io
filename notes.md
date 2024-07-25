@@ -14,5 +14,38 @@ What parameters should I should be so that I can dispose of the elements on larg
 I would like to maintain this stylization, but I would like to replace the icons with PNG Click, only four, I'm doing my portfolio and I would like to put in the first name and logo of my FAU -UFRRJ University, following the Full Stack JS - Hotmart courses, FullStack Developer JS - Back -endfull Stack Developer JS - Back end, Cesae Digital - Center for Skills Development, PHP/Laravel server web
 Cesae Digital - Center for the development of skills
 
+How can I adjust the posting and sizing of the "circle"
 
-I'm having trouble carrying the images
+What is happening with the content on smaller screens now has a lower scroll bar because this is happening?
+
+I need help, my content is surpassing the cointainer limit on smaller screens.
+
+Box sx={{ textAlign: "left" }}>
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "3em", md: "4em", lg: "6em" },
+                letterSpacing: "-0.05em",
+                background:
+                  "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Hi, everyone!
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "1em", md: "1.2em", lg: "1.5em" },
+                mt: 2,
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum
+              dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, ipsum dolor sit amet, consectetur
+            </Typography>
+          </Box>

@@ -11,12 +11,14 @@ export interface MainLayoutProps {
 export default function MainLayout(props: MainLayoutProps) {
   return (
     <Box
+
       display="flex"
       flexDirection="column"
       minHeight="100vh"
       minWidth={200}
       alignItems="stretch"
       justifyContent="stretch"
+
     >
       <MainAppBar />
       

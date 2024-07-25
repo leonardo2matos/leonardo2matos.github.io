@@ -1,126 +1,63 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import { Container, Typography } from "@mui/material";
+import React from "react";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import CardComponents from "@/components/CardComponents";
 import CardComponentsStacks from "./CardComponentsStacks";
 import CardComponentsEduc from "./CardComponentsEduc";
 
-
 const BasicGrid: React.FC = () => {
+  const isXs = useMediaQuery("(max-width:600px)");
   return (
     <Container
-      maxWidth="lg"
+      maxWidth={isXs ? "sm" : "md"}
       sx={{
-        mt: { xs: 15, sm: 25, md: 30, lg: 30, xl: 35 }, // Adiciona margem superior para evitar sobreposição com a navbar
-        minHeight: "95vh",
-        alignItems: "center",
-        alignContent: "stretch",
-        justifyContent: "center",
+        mt: { xs: 20, sm: 25, md: 35, lg: 30 },
+        minHeight: "100vh",
         display: "flex",
+        flexDirection: "column",
       }}
     >
       <Box sx={{ width: "100%" }}>
         <Grid container spacing={3}>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={6}
-            sx={{ }}
-          >
+          <Grid item xs={12} sm={6} md={6} lg={6}>
             <CardComponents />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={6}
-            lg={6}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
+          <Grid item xs={12} sm={6} md={6} lg={6}>
             <Box sx={{ textAlign: "left" }}>
               <Typography
+                variant="h2"
                 sx={{
                   fontWeight: 700,
-                  fontSize: { xs: "3.5em", md: "4.5em", lg: "4.0em" },
-                  letterSpacing: "-0.05em", // Espaçamento entre as letras
+                  fontSize: { xs: "3em", md: "4em", lg: "6em" },
+                  letterSpacing: "-0.05em",
                   background:
                     "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
-                  WebkitBackgroundClip: "text", // Adiciona o degradê ao texto
-                  WebkitTextFillColor: "transparent", // Faz o texto ser preenchido pelo degradê
-                  "&:hover": {
-                    filter: "blur(0)", // Remove o desfoque ao passar o mouse
-                    transition: "filter 0.5s",
-                  },
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
-                variant="body1"
-                component="div"
               >
                 Hi, everyone!
               </Typography>
               <Typography
+                variant="body2"
                 sx={{
                   textAlign: "justify",
-                  fontSize: { xs: "1.0em", md: "1.5em", lg: "2em" },
+                  fontSize: { xs: "1em", md: "1.2em", lg: "1.5em" },
                   mt: 2,
                 }}
-                variant="body2"
-                component="div"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum
+                dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, ipsum dolor sit amet,
+                consectetur
               </Typography>
             </Box>
           </Grid>
-          <Grid
-            container
-            spacing={2}
-            sx={{
-              width: "100%",
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "space-around",
-              alignItems: "center",
-              mb: 15,
-            }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              md={6}
-              lg={6}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <CardComponentsStacks />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              md={6}
-              lg={6}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <CardComponentsEduc />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              md={6}
-              lg={6}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <CardComponentsStacks />
-            </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={6}>
+            <CardComponentsStacks />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={6}>
+            <CardComponentsEduc />
           </Grid>
         </Grid>
       </Box>
@@ -129,5 +66,3 @@ const BasicGrid: React.FC = () => {
 };
 
 export default BasicGrid;
-
-

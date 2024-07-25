@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Planet } from "react-planet";
-import Image from 'next/image';
+import Image from "next/image";
 
-const images = [
+const educImages = [
   {
     src: "/images/ufrrj-logo-1.png",
     alt: "FAU-UFRRJ",
@@ -23,14 +23,14 @@ const images = [
     link: "https://www.cesaedigital.pt",
   },
   {
-    src: "/images/cesae_laravel1.png",
+    src: "/images/cesae_laravel.png",
     alt: "Cesae Digital - PHP/Laravel",
     title: "Cesae Digital - PHP/Laravel",
     link: "https://www.cesaedigital.pt",
   },
 ];
 
-const CardComponentsStacks: React.FC = () => {
+const CardComponentsEduc: React.FC = () => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
   const isSm = useMediaQuery(theme.breakpoints.between("xs", "sm"));
@@ -40,8 +40,8 @@ const CardComponentsStacks: React.FC = () => {
   const getOrbitRadius = () => {
     if (isXs) return 100;
     if (isSm) return 150;
-    if (isMd) return 200;
-    if (isLg) return 250;
+    if (isMd) return 160;
+    if (isLg) return 200;
     return 200;
   };
 
@@ -57,9 +57,11 @@ const CardComponentsStacks: React.FC = () => {
         textAlign: "center",
       }}
     >
+
+    <Container maxWidth={isXs ? "sm" : "md"}> 
       <Planet
         centerContent={
-          <Tooltip title="Clique para ver mais">
+          <Tooltip title="Click to see more">
             <Box
               sx={{
                 width: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
@@ -99,12 +101,12 @@ const CardComponentsStacks: React.FC = () => {
         autoClose
         orbitRadius={getOrbitRadius()}
         hideOrbit
-        rotation={80}
+        rotation={90}
         dragablePlanet
         dragRadiusPlanet={20}
         bounce
       >
-        {images.map((image, index) => (
+        {educImages.map((image, index) => (
           <Tooltip title={image.title} key={index}>
             <Box
               component="a"
@@ -112,14 +114,13 @@ const CardComponentsStacks: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                position: 'relative',
+                position: "relative",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: { xs: "4em", sm: "6em", md: "8em", lg: "10em" },
-                height: { xs: "4em", sm: "6em", md: "8em", lg: "10em" },
+                width: { xs: "4em", sm: "5em", md: "6em", lg: "10em" },
+                height: { xs: "4em", sm: "5em", md: "6em", lg: "10em" },
                 borderRadius: "50%",
-                overflow: "hidden",
                 margin: { xs: "0.3em", sm: "0.5em", md: "0.7em", lg: "1em" },
                 transition: "transform 0.3s",
                 "&:hover": {
@@ -131,18 +132,16 @@ const CardComponentsStacks: React.FC = () => {
                 src={image.src}
                 alt={image.alt}
                 layout="fill"
-                objectFit="contain" // Mantém a proporção da imagem
-                sx={{
-                  maxWidth: "100%",  // Limita o tamanho máximo da imagem
-                  maxHeight: "100%", // Garante que a imagem não ultrapasse as dimensões do contêiner
-                }}
+                objectFit="cover" // Ajuste para preencher a área disponível mantendo a proporção
+                objectPosition="center" // Centraliza a imagem
               />
             </Box>
           </Tooltip>
         ))}
       </Planet>
+    </Container>
     </Box>
   );
 };
 
-export default CardComponentsStacks;
+export default CardComponentsEduc;
