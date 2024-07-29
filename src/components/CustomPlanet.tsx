@@ -21,93 +21,6 @@ import { SiMui, SiNextdotjs, SiNextui } from "react-icons/si";
 import { IconType } from "react-icons";
 import Image from "next/image";
 
-const icons = [
-  {
-    Component: FaHtml5,
-    className: "html",
-    title: "HTML",
-    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    color: "orange",
-  },
-  {
-    Component: FaCss3Alt,
-    className: "css",
-    title: "CSS",
-    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    color: "lightblue",
-  },
-  {
-    Component: RiJavascriptFill,
-    className: "js",
-    title: "JavaScript",
-    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    color: "gold",
-  },
-  {
-    Component: BiLogoTypescript,
-    className: "typescript",
-    title: "TypeScript",
-    link: "https://www.typescriptlang.org/",
-    color: "blue",
-  },
-  {
-    Component: FaReact,
-    className: "react",
-    title: "React",
-    link: "https://reactjs.org/",
-    color: "cyan",
-  },
-  {
-    Component: SiNextdotjs,
-    className: "nextjs",
-    title: "Next.js",
-    link: "https://nextjs.org/",
-    color: "black",
-  },
-  {
-    Component: SiNextui,
-    className: "nextui",
-    title: "NextUI",
-    link: "https://nextui.org/",
-    color: "black",
-  },
-  {
-    Component: SiMui,
-    className: "mui",
-    title: "MUI",
-    link: "https://mui.com/",
-    color: "blue",
-  },
-  {
-    Component: FaNode,
-    className: "node",
-    title: "Node.js",
-    link: "https://nodejs.org/",
-    color: "green",
-  },
-  {
-    Component: BiLogoMongodb,
-    className: "mongo",
-    title: "MongoDB",
-    link: "https://www.mongodb.com/",
-    color: "green",
-  },
-  {
-    Component: FaNpm,
-    className: "npm",
-    title: "NPM",
-    link: "https://www.npmjs.com/",
-    color: "red",
-  },
-  {
-    Component: FaYarn,
-    className: "yarn",
-    title: "Yarn",
-    link: "https://yarnpkg.com/",
-    color: "cyan",
-  },
-];
-
 export interface PlanetItem {
   icon: IconType | string;
   alt?: string;
@@ -134,9 +47,9 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
 
   const getOrbitRadius = () => {
     if (isXs) return 90;
-    if (isSm) return 120;
-    if (isMd) return 140;
-    if (isLg) return 180;
+    if (isSm) return 100;
+    if (isMd) return 130;
+    if (isLg) return 170;
     return 180;
   };
 
@@ -146,20 +59,20 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: { xs: "10em", sm: "12em", md: "16em", lg: "24em" },
+        minHeight: { xs: "10em", sm: "12em", md: "16em", lg: "18em" },
         textAlign: "center",
-        marginTop: { xs: "-5em", sm: "-6em", md: "-8em", lg: "-12em" },
-        marginLeft: { xs: "-5em", sm: "-6em", md: "-8em", lg: "-12em" }
+        marginTop: { xs: "-5em", sm: "-4em", md: "-3em", lg: "-4em" },
+        marginLeft: { xs: "-5em", sm: "-4em", md: "-3em", lg: "-4em" },
+        marginBottom: { xs: 8, sm: 8, md: 12, lg: 14 }, // Adiciona espaçamento inferior
       }}
     >
       <Planet
         centerContent={
-          <Tooltip title="Clique para ver mais">
+          <Tooltip title="Click to learn more">
             <Box
               sx={{
-                width: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
-                height: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
-
+                width: { xs: "5em", sm: "6em", md: "8em", lg: "10em" },
+                height: { xs: "5em", sm: "6em", md: "8em", lg: "10em" },
                 borderRadius: "50%",
                 backgroundColor: "black",
                 display: "flex",
@@ -185,7 +98,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                     xs: "1.0em",
                     sm: "1.3em",
                     md: "1.7em",
-                    lg: "2.5em",
+                    lg: "2.2em",
                   },
                 }}
               >
@@ -219,8 +132,8 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  width: { xs: "4em", sm: "5em", md: "6em", lg: "7em" },
-                  height: { xs: "4em", sm: "5em", md: "6em", lg: "7em" },
+                  width: { xs: "4em", sm: "5em", md: "6em", lg: "6em" },
+                  height: { xs: "4em", sm: "5em", md: "6em", lg: "6em" },
                   borderRadius: "50%",
                   margin: { xs: "0.3em", sm: "0.5em", md: "0.7em", lg: "1em" },
                   padding: "0.5em",
@@ -233,7 +146,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                       xs: "2.5em",
                       sm: "3em",
                       md: "3.5em",
-                      lg: "4em",
+                      lg: "3.0em",
                     },
                     color: item.color,
                   },

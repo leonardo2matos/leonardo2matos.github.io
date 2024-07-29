@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
-import CardComponents from "@/components/CardComponents";
 import CustomPlanet from "./CustomPlanet";
 import { educations, experiences, stacks } from "./data";
+import CardImage from "./CardImage";
 
 const BasicGrid: React.FC = () => {
   const isXs = useMediaQuery("(max-width:600px)");
@@ -11,7 +11,7 @@ const BasicGrid: React.FC = () => {
     <Container
       maxWidth={isXs ? "sm" : "md"}
       sx={{
-        mt: { xs: 10, sm: 15, md: 20, lg: 25 },
+        mt: { xs: 25, sm: 25, md: 30, lg: 35 },
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -19,16 +19,17 @@ const BasicGrid: React.FC = () => {
     >
       <Grid container spacing={3} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          <CardComponents />
+          <CardImage />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          <Box sx={{ mb: 2 }}>
+          <Box sx={{ mb: 10 }}>
             <Typography
               variant="h2"
               sx={{
+                //textWrap:"nowrap",
                 textAlign: "left",
                 fontWeight: 700,
-                fontSize: { xs: "2.5em", sm: "3.5em", md: "4em", lg: "6em" },
+                fontSize: { xs: "2.7em", sm: "3.7em", md: "4em", lg: "5em" },
                 letterSpacing: "-0.05em",
                 background:
                   "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
@@ -62,10 +63,10 @@ const BasicGrid: React.FC = () => {
         spacing={3}
         justifyContent="center"
         alignItems="center"
-        sx={{ mt: { xs: 4, md: 0 } }}
+        sx={{ mt: { xs: 4, md: 4 }, mb:{xs: 6, md: 0} }}
       >
         <Grid item xs={12} sm={4} md={4} lg={4}>
-          <CustomPlanet label="STACKS" items={stacks} />
+          <CustomPlanet  label="STACKS" items={stacks} />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <CustomPlanet label="EDUCATION" items={educations} />
