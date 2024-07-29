@@ -22,14 +22,14 @@ const BasicGrid: React.FC = () => {
           <CardImage />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          <Box sx={{ mb: 10 }}>
+          <Box>
             <Typography
               variant="h2"
               sx={{
-                //textWrap:"nowrap",
+                textWrap:"nowrap",
                 textAlign: "left",
                 fontWeight: 700,
-                fontSize: { xs: "2.7em", sm: "3.7em", md: "4em", lg: "5em" },
+                fontSize: { xs: "2.7em", sm: "3.7em", md: "4.5em", lg: "5em" },
                 letterSpacing: "-0.05em",
                 background:
                   "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
@@ -63,7 +63,7 @@ const BasicGrid: React.FC = () => {
         spacing={3}
         justifyContent="center"
         alignItems="center"
-        sx={{ mt: { xs: 4, md: 4 }, mb:{xs: 6, md: 0} }}
+        sx={{ mt: { xs: 6, md: 7 }, mb:{xs: 6, md: 0} }}
       >
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <CustomPlanet  label="STACKS" items={stacks} />

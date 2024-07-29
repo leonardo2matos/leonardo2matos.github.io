@@ -7,17 +7,6 @@ import {
   useTheme,
 } from "@mui/material";
 import { Planet } from "react-planet";
-import { RiJavascriptFill } from "react-icons/ri";
-import {
-  FaCss3Alt,
-  FaHtml5,
-  FaNode,
-  FaNpm,
-  FaReact,
-  FaYarn,
-} from "react-icons/fa";
-import { BiLogoMongodb, BiLogoTypescript } from "react-icons/bi";
-import { SiMui, SiNextdotjs, SiNextui } from "react-icons/si";
 import { IconType } from "react-icons";
 import Image from "next/image";
 
