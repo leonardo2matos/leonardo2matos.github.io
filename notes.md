@@ -49,3 +49,6 @@ Box sx={{ textAlign: "left" }}>
               consectetur adipiscing elit, ipsum dolor sit amet, consectetur
             </Typography>
           </Box>
+
+
+      I would like these components to behave as a column on medium and smaller screens in ways your space around allows the component, 'planet' to work well.

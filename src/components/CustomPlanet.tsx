@@ -18,6 +18,8 @@ import {
 } from "react-icons/fa";
 import { BiLogoMongodb, BiLogoTypescript } from "react-icons/bi";
 import { SiMui, SiNextdotjs, SiNextui } from "react-icons/si";
+import { IconType } from "react-icons";
+import Image from "next/image";
 
 const icons = [
   {
@@ -106,7 +108,24 @@ const icons = [
   },
 ];
 
-const CardComponentsStacks: React.FC = () => {
+export interface PlanetItem {
+  icon: IconType | string;
+  alt?: string;
+  className?: string;
+  title: string;
+  link: string;
+  color?: string;
+}
+
+export interface CustomPlanetProps {
+  label: string;
+  items: PlanetItem[];
+}
+
+const CustomPlanet: React.FC<CustomPlanetProps> = ({
+  label,
+  items,
+}: CustomPlanetProps) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
   const isSm = useMediaQuery(theme.breakpoints.between("xs", "sm"));
@@ -114,11 +133,11 @@ const CardComponentsStacks: React.FC = () => {
   const isLg = useMediaQuery(theme.breakpoints.up("md"));
 
   const getOrbitRadius = () => {
-    if (isXs) return 100;
-    if (isSm) return 110;
-    if (isMd) return 120;
-    if (isLg) return 200;
-    return 200;
+    if (isXs) return 90;
+    if (isSm) return 120;
+    if (isMd) return 140;
+    if (isLg) return 180;
+    return 180;
   };
 
   return (
@@ -127,10 +146,10 @@ const CardComponentsStacks: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column",
-        height: { xs: "auto", md: "500px" },
-        mt: { xs: 4, md: 0 },
+        minHeight: { xs: "10em", sm: "12em", md: "16em", lg: "24em" },
         textAlign: "center",
+        marginTop: { xs: "-5em", sm: "-6em", md: "-8em", lg: "-12em" },
+        marginLeft: { xs: "-5em", sm: "-6em", md: "-8em", lg: "-12em" }
       }}
     >
       <Planet
@@ -140,6 +159,7 @@ const CardComponentsStacks: React.FC = () => {
               sx={{
                 width: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
                 height: { xs: "5em", sm: "6em", md: "8em", lg: "12em" },
+
                 borderRadius: "50%",
                 backgroundColor: "black",
                 display: "flex",
@@ -161,16 +181,20 @@ const CardComponentsStacks: React.FC = () => {
                 variant="h2"
                 sx={{
                   textAlign: "center",
-                  fontSize: { xs: "1.0em", sm: "1.5em", md: "2em", lg: "3.5em" },
-                  
+                  fontSize: {
+                    xs: "1.0em",
+                    sm: "1.3em",
+                    md: "1.7em",
+                    lg: "2.5em",
+                  },
                 }}
               >
-                STACKS
+                {label}
               </Typography>
             </Box>
           </Tooltip>
         }
-        open
+        open={false}
         tension={500}
         friction={19}
         autoClose
@@ -181,13 +205,14 @@ const CardComponentsStacks: React.FC = () => {
         dragRadiusPlanet={20}
         bounce
       >
-        {icons.map((icon, index) => {
-          const IconComponent = icon.Component;
+        {items.map((item, index) => {
+          const IconComponent =
+            typeof item.icon === "string" ? Image : item.icon;
           return (
-            <Tooltip title={icon.title} key={index}>
+            <Tooltip title={item.title} key={index}>
               <Box
                 component="a"
-                href={icon.link}
+                href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -204,13 +229,28 @@ const CardComponentsStacks: React.FC = () => {
                     transform: "scale(1.2)",
                   },
                   "& svg": {
-                    fontSize: { xs: "2.5em", sm: "3em", md: "3.5em", lg: "4em" },
-                    color: icon.color,
+                    fontSize: {
+                      xs: "2.5em",
+                      sm: "3em",
+                      md: "3.5em",
+                      lg: "4em",
+                    },
+                    color: item.color,
                   },
                 }}
-                className={icon.className}
+                className={item.className}
               >
-                <IconComponent />
+                {typeof item.icon === "string" ? (
+                  <Image
+                    src={item.icon}
+                    alt={item.alt!}
+                    layout="fill"
+                    objectFit="cover" // Ajuste para preencher a área disponível mantendo a proporção
+                    objectPosition="center" // Centraliza a imagem
+                  />
+                ) : (
+                  <item.icon />
+                )}
               </Box>
             </Tooltip>
           );
@@ -220,4 +260,4 @@ const CardComponentsStacks: React.FC = () => {
   );
 };
 
-export default CardComponentsStacks;
+export default CustomPlanet;
