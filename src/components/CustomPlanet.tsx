@@ -17,6 +17,8 @@ export interface PlanetItem {
   title: string;
   link: string;
   color?: string;
+ 
+  
 }
 
 export interface CustomPlanetProps {
@@ -28,6 +30,8 @@ export interface CustomPlanetProps {
 const CustomPlanet: React.FC<CustomPlanetProps> = ({
   label,
   items,
+ 
+ 
   
 }: CustomPlanetProps) => {
   const theme = useTheme();
@@ -73,7 +77,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                 boxShadow:
                   "0 0 7px 0 #9013fe, 0 0 5px 2px #d64eff, inset 0 0 5px 1px #d64eff",
                 "&:hover": {
-                  transform: "scale(1.1)",
+                  transform: "scale(1.0)",
                   border: "1px solid #f3eaff",
                   boxShadow:
                     "0 0 7px 0 #9013fe, 0 0 5px 2px #d64eff, inset 0 0 7px 0 #9013fe, inset 0 0 5px 1px #d64eff",
@@ -127,7 +131,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                   width: { xs: "4em", sm: "5em", md: "6em", lg: "6em" },
                   height: { xs: "4em", sm: "5em", md: "6em", lg: "6em" },
                   borderRadius: "50%",
-                  margin: { xs: "0.3em", sm: "0.5em", md: "0.7em", lg: "1em" },
+                  margin: { xs: "0.3em", sm: "0.7em", md: "0.9em", lg: "1em" },
                   padding: "0.5em",
                   transition: "transform 0.3s, color 0.3s",
                   "&:hover": {
@@ -137,10 +141,11 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                     fontSize: {
                       xs: "2.5em",
                       sm: "3em",
-                      md: "3.5em",
+                      md: "4.5em",
                       lg: "3.0em",
                     },
                     color: item.color,
+                    
                   },
                 }}
                 className={item.className}
@@ -166,3 +171,5 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
 };
 
 export default CustomPlanet;
+
+

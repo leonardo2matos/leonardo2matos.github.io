@@ -106,7 +106,7 @@ const educations: PlanetItem[] = [
     link: "https://www.ufrrj.br/",
   },
   {
-    icon: "/images/fullstack-js-hotmart.png",
+    icon: "/images/formacao.png",
     alt: "Full Stack JS - Hotmart",
     title: "Full Stack JS - Hotmart",
     link: "https://www.hotmart.com/",
@@ -127,10 +127,12 @@ const educations: PlanetItem[] = [
 
 const experiences: PlanetItem[] = [
   {
-    icon: "/images/ufrrj-logo-1.png",
-    alt: "FAU-UFRRJ",
-    title: "FAU-UFRRJ",
-    link: "https://www.ufrrj.br/",
+    icon: "/images/equantic.png",
+    alt: "equantic",
+    title: "equantic",
+    link: "https://equantic.tech/",
+    
+   
   },
 ];
 export { stacks, educations, experiences };
