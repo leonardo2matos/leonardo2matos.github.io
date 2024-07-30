@@ -22,11 +22,13 @@ export interface PlanetItem {
 export interface CustomPlanetProps {
   label: string;
   items: PlanetItem[];
+  
 }
 
 const CustomPlanet: React.FC<CustomPlanetProps> = ({
   label,
   items,
+  
 }: CustomPlanetProps) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
@@ -48,10 +50,10 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: { xs: "10em", sm: "12em", md: "16em", lg: "18em" },
+        minHeight: { xs: "10em", sm: "14em", md: "15em", lg: "16em" },
         textAlign: "center",
-        marginTop: { xs: "-5em", sm: "-4em", md: "-3em", lg: "-4em" },
-        marginLeft: { xs: "-5em", sm: "-4em", md: "-3em", lg: "-4em" },
+        marginTop: { xs: "-5em", sm: "-5em", md: "-6em", lg: "-1em" },
+        marginLeft: { xs: "-5em", sm: "-5em", md: "-6em", lg: "-1em" },
         marginBottom: { xs: 8, sm: 8, md: 12, lg: 14 }, // Adiciona espaçamento inferior
       }}
     >
@@ -60,8 +62,8 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
           <Tooltip title="Click to learn more">
             <Box
               sx={{
-                width: { xs: "5em", sm: "6em", md: "8em", lg: "10em" },
-                height: { xs: "5em", sm: "6em", md: "8em", lg: "10em" },
+                width: { xs: "6em", sm: "6.5em", md: "9em", lg: "10em" },
+                height: { xs: "6em", sm: "6.5em", md: "9em", lg: "10em" },
                 borderRadius: "50%",
                 backgroundColor: "black",
                 display: "flex",
@@ -102,9 +104,10 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
         autoClose
         orbitRadius={getOrbitRadius()}
         hideOrbit
-        rotation={80}
+        rotation={90}
         dragablePlanet
         dragRadiusPlanet={20}
+        bounceOnClose
         bounce
       >
         {items.map((item, index) => {
@@ -150,7 +153,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                     objectFit="cover" // Ajuste para preencher a área disponível mantendo a proporção
                     objectPosition="center" // Centraliza a imagem
                   />
-                ) : (
+                ) : ( 
                   <item.icon />
                 )}
               </Box>

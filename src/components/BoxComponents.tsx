@@ -5,7 +5,7 @@ import { educations, experiences, stacks } from "./data";
 import CardImage from "./CardImage";
 
 const BasicGrid: React.FC = () => {
-  const isXs = useMediaQuery("(max-width:600px)");
+  const isXs = useMediaQuery("(max-width:700px)");
 
   return (
     <Container
@@ -24,17 +24,19 @@ const BasicGrid: React.FC = () => {
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <Box>
             <Typography
-              variant="h2"
+              variant="body2"
+              component="h2"
               sx={{
                 textWrap:"nowrap",
                 textAlign: "left",
                 fontWeight: 700,
-                fontSize: { xs: "2.7em", sm: "3.7em", md: "4.5em", lg: "5em" },
-                letterSpacing: "-0.05em",
+                fontSize: { xs: "2.7em", sm: "4em", md: "4.7em", lg: "4.8em" },
+                letterSpacing: "-0.07em",
                 background:
                   "linear-gradient(135deg, rgba(0,0,255,1), rgba(255,0,0,1))",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                marginTop: { xs: 0, sm: -25, md: -20, lg: -5 },
               }}
             >
               Hi, everyone!
@@ -44,7 +46,7 @@ const BasicGrid: React.FC = () => {
               sx={{
                 textAlign: "justify",
                 fontSize: { xs: "1em", md: "1.2em", lg: "1.5em" },
-                mt: 2,
+                mt: 5,
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
