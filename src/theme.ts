@@ -17,6 +17,26 @@ const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   display: 'swap',
 });
+
+const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+});
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#000000', // Cor principal customizada
+    },
+    secondary: {
+      main: '#FF5722', // Cor secundária customizada
+    },
+  },
+});
+
+
 const theme = createTheme({
   palette:{
     primary: {

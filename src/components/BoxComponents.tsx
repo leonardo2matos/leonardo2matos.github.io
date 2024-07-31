@@ -3,6 +3,7 @@ import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import CustomPlanet from "./CustomPlanet";
 import { educations, experiences, stacks } from "./data";
 import CardImage from "./CardImage";
+import CarouselProjects from "./CarouselProjects";
 
 const BasicGrid: React.FC = () => {
   const isXs = useMediaQuery("(max-width:700px)");
@@ -27,7 +28,7 @@ const BasicGrid: React.FC = () => {
               variant="body2"
               component="h2"
               sx={{
-                textWrap:"nowrap",
+                textWrap: "nowrap",
                 textAlign: "left",
                 fontWeight: 700,
                 fontSize: { xs: "2.7em", sm: "4em", md: "4.7em", lg: "4.8em" },
@@ -46,7 +47,7 @@ const BasicGrid: React.FC = () => {
               sx={{
                 textAlign: "justify",
                 fontSize: { xs: "1em", md: "1.2em", lg: "1.5em" },
-                mt: 5,
+                mt: 2,
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
@@ -65,16 +66,35 @@ const BasicGrid: React.FC = () => {
         spacing={3}
         justifyContent="center"
         alignItems="center"
-        sx={{ mt: { xs: 6, md: 7 }, mb:{xs: 6, md: 0} }}
+        sx={{ mt: { xs: 6, md: 7 }, mb: { xs: 6 } }}
       >
         <Grid item xs={12} sm={4} md={4} lg={4}>
-          <CustomPlanet  label="STACKS" items={stacks} />
+          <CustomPlanet label="STACKS" items={stacks} />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <CustomPlanet label="EDUCATION" items={educations} />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
-        <CustomPlanet label="EXPERIENCE" items={experiences} />
+          <CustomPlanet label="EXPERIENCE" items={experiences} />
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={3}>
+        <Grid
+          sx={{     
+            mb: { xs: 20, md: 8 },
+            ml: { md: "1em", lg: "2em" },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+        >
+          <CarouselProjects />
         </Grid>
       </Grid>
     </Container>
