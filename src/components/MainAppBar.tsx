@@ -14,6 +14,7 @@ import { useTheme } from "@mui/material/styles";
 import { useThemeContext } from "@/ThemeContext";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import ToggleButton from "./ToggleButton";
 
 const socialLinks = [
   { icon: <MdEmail />, title: "Email", href: "mailto:youremail@example.com" },
@@ -40,12 +41,25 @@ const socialLinks = [
 ];
 
 const MainAppBar: React.FC = () => {
-  const theme = useTheme();
-  const { toggleTheme } = useThemeContext();
+  const { mode, toggleTheme } = useThemeContext();
+  
 
   return (
     <AppBar position="static" color="primary">
       <Container maxWidth="lg">
+      <Box
+           sx={{
+             display: "flex",
+             pt:2,
+             justifyContent: "flex-end",
+             alignItems: "center",
+           }}
+           >
+          <ToggleButton/>
+          <Typography variant="body1" sx={{ ml: 1, color: 'primary.contrastText' }}>
+            {mode === 'dark' ? 'Light Mode' : 'Dark Mode'}
+          </Typography>
+           </Box>
         <Toolbar
           sx={{
             display: "flex",
@@ -56,6 +70,7 @@ const MainAppBar: React.FC = () => {
             padding: { xs: 1, sm: 2 },
           }}
         >
+          
           <Box sx={{ display: "flex" }}>
             <Divider
               orientation="vertical"
@@ -63,7 +78,7 @@ const MainAppBar: React.FC = () => {
               sx={{
                 height: { xs: "80px", sm: "150px", md: "120px", lg: "150px" },
                 marginRight: 2,
-                backgroundColor: "white",
+                backgroundColor: "primary.contrastText",
               }}
             />
             <Box sx={{ textAlign: "left" }}>
@@ -71,7 +86,8 @@ const MainAppBar: React.FC = () => {
                 variant="h4"
                 noWrap
                 component="div"
-                sx={{ fontSize: { xs: "1.5em", sm: "3em" } }}
+                color={"primary.contrastText"}
+                sx={{ fontSize: { xs: "1.7em", sm: "4em" } }}
               >
                 Leonardo
                 <br />
@@ -81,37 +97,31 @@ const MainAppBar: React.FC = () => {
                 variant="h6"
                 component="h2"
                 noWrap
+                color={"primary.contrastText"}
                 sx={{ fontSize: { xs: "1em", sm: "1.25em" } }}
               >
                 Front-end Developer
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "flex-end", padding: 1 }}>
-            <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Box sx={{ display: "flex", justifyContent: "center", padding: 2, mt:{ xs: 2, sm: 5 }} }>
+            <Stack direction="row"  spacing={{ xs: 1, sm: 1, md: 2 }}>
               {socialLinks.map((link, index) => (
                 <Tooltip key={index} title={link.title} arrow>
                   <Link
                     href={link.href}
                     target="_blank"
                     sx={{
-                      color: "#ffffff",
+                      color: "primary.contrastText",
                       fontSize: { xs: "1.5em", sm: "2em", md: "2em" },
-                      "&:hover": { color: "primary.light" },
+                      "&:hover": { color: "primary.dark" },
                     }}
                   >
                     {link.icon}
                   </Link>
                 </Tooltip>
               ))}
-            </Stack>
-            <IconButton onClick={toggleTheme} color="inherit">
-              {theme.palette.mode === "dark" ? (
-                <Brightness7Icon />
-              ) : (
-                <Brightness4Icon />
-              )}
-            </IconButton>
+            </Stack> 
           </Box>
         </Toolbar>
       </Container>

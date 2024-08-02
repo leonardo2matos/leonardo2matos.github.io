@@ -21,23 +21,23 @@ const ibmPlexSans = IBM_Plex_Sans({
 // light theme definitions
 const LightTheme = createTheme({
   palette: {
+    mode: "light",
     primary: {
       main: "#000000",
-      dark: "deepPurple[700]",
-      light: "deepPurple[500]",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "lightBlue[500]",
-      dark: "lightBlue[400]",
-      light: "lightBlue[300]",
-      contrastText: "#ffffff",
+      main: "#FF5722",
+      contrastText: "#000000",
     },
 
     background: {
       default: "#ffffff",
       paper: "#ffffff",
     },
+    text: {
+      primary: "#000000",
+    }
   },
 
   typography: {
@@ -59,27 +59,30 @@ const LightTheme = createTheme({
 // dark theme definitions
  const DarkTheme = createTheme({
   palette: {
+    mode:'dark',
     primary: {
-      main: "#ffffff",
-      dark: "deepPurple[700]",
-      light: "deepPurple[500]",
-      contrastText: "#ffffff",
+      main: "#90caf9",
+      
     },
     secondary: {
-      main: "indigo[500]",
-      dark: "indigo[800]",
-      light: "indigo[300]",
-      contrastText: "#ffffff",
+      main: "#f48fb1",
+      
     },
     background: {
-      default: '#000000',
+      default: '#121212',
       paper: '#ffffff',
     },
+    
+    text: {
+      primary: "#ffffff",
+    }
   },
   typography: {
     fontFamily: oswald.style.fontFamily,
     h1: {
       fontSize: 45,
+    
+      
       
     },
     body1: {
