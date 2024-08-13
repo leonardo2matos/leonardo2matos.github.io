@@ -15,6 +15,7 @@ const ToggleButton: React.FC = () => {
       onClick={toggleTheme}
       sx={{
         color: mode === 'dark' ? theme.palette.primary.contrastText: theme.palette.primary.contrastText,
+         "&:hover": { color: "gray" },
       }}
     >
       {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}

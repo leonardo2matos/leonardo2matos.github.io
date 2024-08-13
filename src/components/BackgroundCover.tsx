@@ -9,7 +9,7 @@ export default function BackgroundCover() {
     <Box
       sx={{
         width: "100vw",
-        height: { xs: "250px", sm: "500px", md: "850px", lg: "100vh" }, //md: '800px'
+        height: { xs: "300px", sm: "500px", md: "850px", lg: "100vh" }, //md: '800px'
         position: "absolute",
         overflow: "hidden",
         bottom: 0,
@@ -17,8 +17,8 @@ export default function BackgroundCover() {
       }}
     >
       <Image
-        src="/images/whitediamonts.jpg"
-        alt="whitediamonts"
+        src={mode === 'dark' ? '/images/darkdiamonts2.png': '/images/whitediamonts2.png'}
+        alt={mode === 'dark' ? 'darkdiamonts' : 'whitediamonts'}
         layout="fill"
         objectFit="cover"
         priority

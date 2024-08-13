@@ -69,7 +69,7 @@ const LightTheme = createTheme({
       
     },
     background: {
-      default: '#121212',
+      default: '#000000',
       paper: '#ffffff',
     },
     

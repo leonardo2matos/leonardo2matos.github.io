@@ -6,10 +6,15 @@ import {
   FaNode,
   FaNpm,
   FaYarn,
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
 } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiNextdotjs, SiNextui, SiMui } from "react-icons/si";
 import { PlanetItem } from "./CustomPlanet";
+import { MdEmail } from "react-icons/md";
 
 const stacks: PlanetItem[] = [
   {
@@ -52,14 +57,14 @@ const stacks: PlanetItem[] = [
     className: "nextjs",
     title: "Next.js",
     link: "https://nextjs.org/",
-    color: "black",
+    color: "gray",
   },
   {
     icon: SiNextui,
     className: "nextui",
     title: "NextUI",
     link: "https://nextui.org/",
-    color: "black",
+    color: "darkgray",
   },
   {
     icon: SiMui,
@@ -135,4 +140,5 @@ const experiences: PlanetItem[] = [
    
   },
 ];
-export { stacks, educations, experiences };
+
+export { stacks, educations, experiences, };

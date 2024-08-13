@@ -82,7 +82,7 @@ const BasicGrid: React.FC = () => {
       <Grid container spacing={3}>
         <Grid
           sx={{     
-            mb: { xs: 20, md: 8 },
+            mb: { xs: 20, md: 2 },
             ml: { md: "1em", lg: "2em" },
             display: "flex",
             justifyContent: "center",
