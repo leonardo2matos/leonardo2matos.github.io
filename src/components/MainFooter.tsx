@@ -16,7 +16,7 @@ export default function Footer() {
       <Typography variant="body1" color="inherit">
         {'Copyright © '}
         <Link color="inherit" href="https://yourwebsite.com/">
-          Your Website
+         Leonardo Matos
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

@@ -14,7 +14,7 @@ import {
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiNextdotjs, SiNextui, SiMui } from "react-icons/si";
 import { PlanetItem } from "./CustomPlanet";
-import { MdEmail } from "react-icons/md";
+
 
 const stacks: PlanetItem[] = [
   {

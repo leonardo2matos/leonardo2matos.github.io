@@ -12,7 +12,7 @@ const BasicGrid: React.FC = () => {
     <Container
       maxWidth={isXs ? "sm" : "md"}
       sx={{
-        mt: { xs: 25, sm: 25, md: 30, lg: 35 },
+        mt: { xs: 15, sm: 20, md: 20, lg: 30 },
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -66,7 +66,7 @@ const BasicGrid: React.FC = () => {
         spacing={3}
         justifyContent="center"
         alignItems="center"
-        sx={{ mt: { xs: 6, md: 7 }, mb: { xs: 6 } }}
+        sx={{ mt: { xs: 6, md: 7 }, mb: { xs: 8, md: 10 } }}
       >
         <Grid item xs={12} sm={4} md={4} lg={4}>
           <CustomPlanet label="STACKS" items={stacks} />
@@ -82,7 +82,7 @@ const BasicGrid: React.FC = () => {
       <Grid container spacing={3}>
         <Grid
           sx={{     
-            mb: { xs: 20, md: 2 },
+            mb: { xs: 10, sm:20, md: 20 },
             ml: { md: "1em", lg: "2em" },
             display: "flex",
             justifyContent: "center",
