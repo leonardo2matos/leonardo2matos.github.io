@@ -18,7 +18,7 @@ const BasicGrid: React.FC = () => {
         flexDirection: "column",
       }}
     >
-      <Grid container spacing={3} justifyContent="center" alignItems="center">
+      <Grid container spacing={4} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <CardImage />
         </Grid>

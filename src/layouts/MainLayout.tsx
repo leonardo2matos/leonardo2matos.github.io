@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import MainAppBar from "@/components/MainAppBar";
 import MainFooter from "@/components/MainFooter";
-import BackgroundCover from "@/components/BackgroundCover";
+import BackgroundPattern from "@/components/BackgroundPattern";
 import { Box } from "@mui/material";
 import { CustomThemeProvider } from "@/ThemeContext";
 
@@ -22,7 +22,7 @@ export default function MainLayout(props: MainLayoutProps) {
         <MainAppBar />
 
         <Box flexGrow={1} position="relative">
-          <BackgroundCover />
+          <BackgroundPattern/>
           <main style={{ flex: 1, overflow: "auto" }}>{props.children}</main>
         </Box>
 
