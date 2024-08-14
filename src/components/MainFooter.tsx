@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Typography, Link } from '@mui/material';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   return (
@@ -12,10 +13,23 @@ export default function Footer() {
         textAlign: 'center',
         flexFlow: 'row wrap',
       }}
+    > 
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        fontSize: { xs: '0.8em', sm: '1em', md: '1.2em' },
+      }}
+    
     >
+
+      <SocialLinks />
+    </Box>
       <Typography variant="body1" color="inherit">
         {'Copyright © '}
-        <Link color="inherit" href="https://yourwebsite.com/">
+        <Link color="inherit"  href="https://yourwebsite.com/">
          Leonardo Matos
         </Link>{' '}
         {new Date().getFullYear()}

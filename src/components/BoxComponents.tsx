@@ -10,7 +10,7 @@ const BasicGrid: React.FC = () => {
 
   return (
     <Container
-      maxWidth={isXs ? "sm" : "md"}
+      //maxWidth={isXs ? "sm" : "md"}
       sx={{
         mt: { xs: 15, sm: 20, md: 20, lg: 30 },
         minHeight: "100vh",
@@ -40,22 +40,25 @@ const BasicGrid: React.FC = () => {
                 marginTop: { xs: 0, sm: -25, md: -20, lg: -5 },
               }}
             >
-              Hi, everyone!
+              Hello World!
             </Typography>
             <Typography
               variant="body2"
               sx={{
                 textAlign: "justify",
                 fontSize: { xs: "1em", md: "1.2em", lg: "1.5em" },
-                mt: 2,
+                
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              Sou Leonardo Matos, Arquiteto e Urbanista em transição para a carreira
+              de Desenvolvedor Front-End, atualmente atuando como Intern na
+              Equantic Tech. Com uma sólida experiência em ferramentas como
+              AutoCAD, Revit, SketchUp e no pacote Adobe, trago para o
+              desenvolvimento web um olhar detalhista e uma abordagem criativa.
+              Minhas habilidades em design e resolução de problemas, adquiridas
+              na arquitetura, me permitem criar interfaces intuitivas e
+              funcionais. Estou sempre em busca de novos desafios, combinando
+              design e tecnologia para entregar soluções digitais impactantes.
             </Typography>
           </Box>
         </Grid>
@@ -81,8 +84,8 @@ const BasicGrid: React.FC = () => {
 
       <Grid container spacing={3}>
         <Grid
-          sx={{     
-            mb: { xs: 10, sm:20, md: 20 },
+          sx={{
+            mb: { xs: 10, sm: 20, md: 20 },
             ml: { md: "1em", lg: "2em" },
             display: "flex",
             justifyContent: "center",
