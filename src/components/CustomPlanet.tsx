@@ -63,7 +63,7 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
     >
       <Planet
         centerContent={
-          <Tooltip title="Click to learn more">
+          <Tooltip title="Click aqui para saber mais">
             <Box
               sx={{
                 width: { xs: "6em", sm: "8em", md: "10em", lg: "10em" },

@@ -75,10 +75,10 @@ const BasicGrid: React.FC = () => {
           <CustomPlanet label="STACKS" items={stacks} />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
-          <CustomPlanet label="EDUCATION" items={educations} />
+          <CustomPlanet label="EDUCAÇÃO" items={educations} />
         </Grid>
         <Grid item xs={12} sm={4} md={4} lg={4}>
-          <CustomPlanet label="EXPERIENCE" items={experiences} />
+          <CustomPlanet label="EXPERIÊNCIA" items={experiences} />
         </Grid>
       </Grid>
 
