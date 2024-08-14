@@ -20,7 +20,7 @@ export default function Footer() {
         justifyContent: 'center',
         alignItems: 'center',
         flexWrap: 'wrap',
-        fontSize: { xs: '0.8em', sm: '1em', md: '1.2em' },
+        fontSize: { xs: '0.8em', sm: '0.8em', md: '0.8em' },
       }}
     
     >
