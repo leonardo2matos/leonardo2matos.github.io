@@ -107,7 +107,7 @@ const educations: PlanetItem[] = [
   {
     icon: "/images/ufrrj-logo-1.png",
     alt: "FAU-UFRRJ",
-    title: "FAU-UFRRJ",
+    title: "Arquitetura e Urbanismo - FAU - UFRRJ",
     link: "https://www.ufrrj.br/",
   },
   {
