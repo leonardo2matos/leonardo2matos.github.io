@@ -51,7 +51,7 @@ const BasicGrid: React.FC = () => {
               }}
             >
               Sou Leonardo Matos, Arquiteto e Urbanista em transição para a carreira
-              de Desenvolvedor Front-End, atualmente atuando como Intern na
+              de Desenvolvedor Front-End, atualmente atuando como Intern Front End Developer na
               Equantic Tech. Com uma sólida experiência em ferramentas como
               AutoCAD, Revit, SketchUp e no pacote Adobe, trago para o
               desenvolvimento web um olhar detalhista e uma abordagem criativa.

@@ -56,8 +56,8 @@ const ButtonDownload: React.FC = () => {
 
     setTimeout(() => {
       const link = document.createElement("a");
-      link.href = "/path/to/your/file.txt";
-      link.download = "file.txt";
+      link.href = "/docs/leonardoMatos_CV.pdf";
+      link.download = "leonardoMatos_CV.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
