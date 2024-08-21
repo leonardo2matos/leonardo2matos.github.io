@@ -21,7 +21,7 @@ const images = [
   {
     label: "Bird",
     imgPath:
-      "images/fullsizeweb_celularprojectband.png",
+      "images/client_page.png",
   },
   {
     label: "Bali, Indonesia",
