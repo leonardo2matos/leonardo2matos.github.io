@@ -107,7 +107,7 @@ const educations: PlanetItem[] = [
   {
     icon: "/images/ufrrj-logo-1.png",
     alt: "FAU-UFRRJ",
-    title: "Arquitetura e Urbanismo - FAU - UFRRJ",
+    title: " Bacharel em Arquitetura e Urbanismo - FAU - UFRRJ",
     link: "https://www.ufrrj.br/",
   },
   {
@@ -134,7 +134,7 @@ const experiences: PlanetItem[] = [
   {
     icon: "/images/equantic.png",
     alt: "equantic",
-    title: "equantic",
+    title: "Intern Front End Developer",
     link: "https://equantic.tech/",
     
    
