@@ -66,8 +66,8 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
           <Tooltip title="Click aqui para saber mais">
             <Box
               sx={{
-                width: { xs: "6em", sm: "8em", md: "10em", lg: "10em" },
-                height: { xs: "6em", sm: "8em", md: "10em", lg: "10em" },
+                width: { xs: "6em", sm: "8em", md: "10em", lg: "11em" },
+                height: { xs: "6em", sm: "8em", md: "10em", lg: "11em" },
                 borderRadius: "50%",
                 backgroundColor: "black",
                 display: "flex",
@@ -90,9 +90,9 @@ const CustomPlanet: React.FC<CustomPlanetProps> = ({
                 sx={{
                   textAlign: "center",
                   fontSize: {
-                    xs: "1.0em",
-                    sm: "1.3em",
-                    md: "1.7em",
+                    xs: "1.2em",
+                    sm: "1.5em",
+                    md: "1.9em",
                     lg: "2.2em",
                   },
                 }}

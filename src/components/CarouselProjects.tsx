@@ -14,26 +14,24 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: "San Francisco – Oakland Bay Bridge, United States",
+    label: "MusicCRM- Server music bands - Laravel/PHP/Bootstrap.",
     imgPath:
       "images/fullsizeweb_celularprojectband.png",
   },
+  
   {
-    label: "Bird",
-    imgPath:
-      "images/client_page.png",
-  },
-  {
-    label: "Bali, Indonesia",
+    label: "Products Management - Node.js/Express/MongoDB.",
     imgPath:
       "images/gestaodeprodutos.png",
   },
   {
-    label: "Goč, Serbia",
+    label: "Anunx - React.js/Next.js/Express/MongoDB.",
     imgPath:
       "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
   },
 ];
+
+ 
 
 function SwipeableTextMobileStepper() {
   const theme = useTheme();
@@ -55,7 +53,7 @@ function SwipeableTextMobileStepper() {
   return (
     <Box
       sx={{
-        maxWidth: 400,
+        maxWidth: { xs: 400, sm: 600, md: 700},
         flexGrow: 1,
       }}
     >
@@ -78,15 +76,18 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
+      
+         
+
         {images.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  height: { xs: 250, sm: 350, md: 400 }, // Responsivo
                   display: "block",
-                  maxWidth: 400,
+                  maxWidth: "100%",
                   overflow: "hidden",
                   width: "100%",
                 }}
