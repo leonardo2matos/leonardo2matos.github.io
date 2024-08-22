@@ -24,11 +24,7 @@ const images = [
     imgPath:
       "images/gestaodeprodutos.png",
   },
-  {
-    label: "Anunx - React.js/Next.js/Express/MongoDB.",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-  },
+ 
 ];
 
  
